@@ -1,6 +1,10 @@
 module Lib
-    ( someFunc
+    ( beginFunc
+    , endFunc
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+beginFunc :: IO ()
+beginFunc = putStrLn "beginning of Haskell program"
+
+endFunc :: IO ()
+endFunc = putStrLn "endning of Haskell program"
