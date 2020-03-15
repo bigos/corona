@@ -6,3 +6,9 @@ First Haskell project during the virus times
 
 https://lorepub.com/post/2016-12-17-Haskell-Pitfalls
 https://github.com/snoyberg/safe-prelude
+
+** Haskell in Depth
+
+*** Index
+
+pdf:/home/jacek/Documents/Manuals/Haskell/Haskell_in_Depth_v9_MEAP.pdf#5
