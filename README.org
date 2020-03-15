@@ -1,0 +1,8 @@
+* Corona
+
+First Haskell project during the virus times
+
+** Prelude gotchas
+
+https://lorepub.com/post/2016-12-17-Haskell-Pitfalls
+https://github.com/snoyberg/safe-prelude
