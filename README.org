@@ -12,3 +12,6 @@ https://github.com/snoyberg/safe-prelude
 *** Index
 
 pdf:/home/jacek/Documents/Manuals/Haskell/Haskell_in_Depth_v9_MEAP.pdf#5
+
+** Types
+https://www.haskell.org/tutorial/goodies.html
