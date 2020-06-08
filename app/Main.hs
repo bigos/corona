@@ -2,12 +2,11 @@ module Main where
 
 import Lib
 
--- import Debug.Trace
+import Debug.Trace
 
 type TypeName = String
 
-data Foo = C Char | D String | E Int | F (String, Foo) deriving (Eq, Show)
-
+data Foo = EndVal | NonVal | C Char | D String | E Int | F (String, Foo) deriving (Eq, Show)
 
 dat :: String
 dat = "123+45*67"
@@ -16,23 +15,21 @@ nth :: Int -> [a] -> a
 nth n l = head (drop n l)
 
 parse :: [Foo] -> [Foo]
-parse [] = [nonval]
+parse [] = [NonVal]
 parse acc =
   let h = (head acc)
   in
     if  False
     then [h ] ++ (drop 1 acc)
-    else [nonval] ++ acc
-
-nonval :: Foo
-nonval =  C 'Z'
+    else [NonVal] ++ acc
 
 none :: [Foo] -> Bool
-none acc = (length acc >= 1) && (head acc) == nonval
+none [] = False
+none acc = head acc == NonVal
 
 eat :: Int -> [Foo] -> [Foo]
 eat n acc =
-  if (n > (length dat))
+  if (trace (show acc) (n > (length dat)))
   then acc
   else (if (none acc)
         then eat (1 + n) (foo n acc)
@@ -41,7 +38,7 @@ eat n acc =
 foo :: Int -> [Foo] -> [Foo]
 foo n acc =
   (if (n == (length dat))
-   then [C 'E']
+   then [EndVal]
    else [C (dat !! n)]) ++ (drop 1 acc)
 
 main :: IO ()
